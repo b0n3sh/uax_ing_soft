@@ -44,6 +44,17 @@ Concesionario(void);
 taller
 */
 bool addCarToStock( Coche* car );
+/* Pasamos puntero a la función como argumento del type Coche, con un iterator iremos desde .begin() a .end(), si encuentra la ocurrencia de ese mismo coche con un comparador, devuelve false, si no, hacemos append del coche y devolvemos true.
+/* 
+	for (i = _stock.begin(); i < _stock.end(); i++) {
+		if i* == car {
+			cout << "exists, exiting...";
+			return false	
+		}
+	}
+	_stock.insert(_stock.end(), car);
+	return true
+
 /*!
 \brief Vende un coche del inventario al usuario y lo añade a 
 su lista de coches
