@@ -63,6 +63,21 @@ Tras ejecutar esta función se quita el coche del inventario
 no puede pagarlo
 */
 bool sellCar( Cliente* client, std::string license );
+/* Primero comprobamos que el coche existe y en ese caso, que el cliente pueda pagarlo, si alguna falla, devolvemos false.
+	std::coche coche_venta;
+	for (i = _stock.begin(); i < _stock.end(); i++) {
+		if (*i.license == license) {
+			coche_venta = *i;	
+		}
+		// Check if client has enough money.
+		if (coche_venta.price=< client.money) {
+			// remove car and return true
+			i*.erase();
+			return true;
+		}
+	}
+	// else return false;
+	return false
 /*!
 \brief Toma un coche averiado del cliente y lo añade al taller
 @returns false si el cliente no tiene ese coche o el coche no 
