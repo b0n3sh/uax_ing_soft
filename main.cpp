@@ -72,7 +72,7 @@ bool sellCar( Cliente* client, std::string license );
 		// Check if client has enough money.
 		if (coche_venta.price=< client.money) {
 			// remove car and return true
-			i*.erase();
+			(*i).erase();
 			return true;
 		}
 	}
@@ -84,6 +84,15 @@ bool sellCar( Cliente* client, std::string license );
 está averiado
 */
 bool checkCarInGarage( Cliente* client, std::string license );
+/* Comprobamos que el coche no esté averiado iterando mirando estado, si no está averiado devolvemos fase así como si no tiene ese coche 
+		
+	if ((*client).searchCar(license) == NULL || !(*client).searchCar(license).isBroken() {
+		return false;
+	}
+	Quitamos el coche del cliente y lo meteriamos al taller devolviendo true
+	(*client).removeCar(license);
+	_repairing.insert(license);		
+	return true;
 /*!
 \brief Toma un coche listo del taller y se lo devuelve al 
 cliente
