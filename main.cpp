@@ -100,4 +100,16 @@ cliente
 listo
 */
 bool retrieveCarFromGarage( Cliente* cliente, std::string license );
+	/* Primero comprobamos que dicho coche esté listo y que esté en el taller, si no devolveríamos false
+	
+        for (i = _stock.begin(); i < _stock.end(); i++) {
+                if ((*i).license == license && (*i).isReady()) {
+			// Now we remove the  car from garage, add it to client collection and return true
+			_repairing.remove(license); //(we would create a remove funct)		
+			(*cliente).addCar(license);
+			return true;
+                }
+        }
+	// else return false
+	return false;
 };
